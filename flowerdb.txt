@@ -1,0 +1,170 @@
+drop database flowerdb;
+CREATE DATABASE IF NOT EXISTS flowerdb  DEFAULT CHARACTER SET utf8;
+
+USE flowerdb;
+
+DROP TABLE IF EXISTS t_user;
+
+CREATE TABLE t_user (
+  user_id char(36) NOT NULL COMMENT '用户id uuid 主键',
+  user_phone varchar(100) NOT NULL COMMENT '用户登陆电话',
+  user_password varchar(32) NOT NULL DEFAULT '""' COMMENT '用户密码 md5',
+  user_nickname varchar(50) DEFAULT '上帝' COMMENT '用户昵称',
+  user_email varchar(30) DEFAULT '""' COMMENT '用户邮箱',
+  user_intro varchar(100) DEFAULT '""' COMMENT '用户介绍',
+  PRIMARY KEY (user_id),
+  UNIQUE KEY UN_user_phone (user_phone)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/*Data for the table t_user */
+insert  into t_user(user_id,user_phone,user_password,user_nickname,user_email,user_intro) 
+values ('f577f9f9-159e-4aaf-9332-fd7b294bc218','12345678987',md5('123'),'李明','lmm@example.com','我是一个学生，喜欢看书和听音乐。我热爱编程，正在学习Java语言。');
+insert  into t_user(user_id,user_phone,user_password,user_nickname,user_email,user_intro) 
+values ('f577f9f9-159e-4aaf-9332-fd7b294bc208','13912345678',md5('123'),'李白','lbb@haha.com','李白（701－762年），字**祺，号**青莲居士，是**唐朝**伟大的诗人、文学家和政治家。他的诗词饱含情感，表现了中国古典诗歌的最高艺术成就。');
+insert  into t_user(user_id,user_phone,user_password,user_nickname,user_email,user_intro) 
+values ('f577f9f9-159e-4aaf-9332-fd7b294bc219','13711225647',md5('123'),'刘翔','liuxiang@example.com','我是一个运动员，热爱健身和锻炼。我喜欢参加各种比赛和活动，并且非常关注健康。我也喜欢唱歌和跳舞。');
+insert  into t_user(user_id,user_phone,user_password,user_nickname,user_email,user_intro) 
+values ('f577f9f9-159e-4aaf-9332-fd7b294bcd19','15300000006',md5('123'),'北方人','beifangren@sina.com','我是一个来自北方的网友。');
+
+
+select * from t_user;
+
+
+DROP TABLE IF EXISTS t_product;
+CREATE TABLE t_product (
+  product_id char(36) NOT NULL DEFAULT '',
+  product_name varchar(100) DEFAULT NULL,
+  product_price double DEFAULT '0',
+  product_category varchar(100) DEFAULT '',
+  product_imgurl varchar(500) DEFAULT '',
+  product_detailimgurl1 varchar(500) DEFAULT '',
+  product_detailimgurl2 varchar(500) DEFAULT '',
+  product_num int(11) DEFAULT '0',
+  product_description varchar(255) DEFAULT '',
+  PRIMARY KEY (product_id),
+  UNIQUE KEY UN_product_name (product_name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('05e20c1a-0401-4c0a-82ab-6fb0f37db397','蝴蝶兰','70','热带鲜花','http://image.flowermall.com/3d78a6bf-247e-4abf-9416-c3312659866d/80979691-1905809726.png','http://image.flowermall.com/3d78a6bf-247e-4abf-9416-c3312659866d/80979692-1905809727.png','http://image.flowermall.com/3d78a6bf-247e-4abf-9416-c3312659866d/80979693-1905809728.png',206,'兰科蝴蝶兰属多年生草本植物，蝴蝶兰希腊文的原意为好似蝴蝶般的兰花，花姿如蝴蝶飞舞而得此名。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('09f47493-214d-44bc-927d-6ce0bf89a057','牡丹','90','送礼首选','http://image.flowermall.com/5b834b8b-9609-4e2c-8b8f-cccf49e38ca9/80979691-2438928564.png','http://image.flowermall.com/5b834b8b-9609-4e2c-8b8f-cccf49e38ca9/80979692-2438928565.png','http://image.flowermall.com/5b834b8b-9609-4e2c-8b8f-cccf49e38ca9/80979693-2438928566.png',185,'牡丹是一种常见的野生植物，分布在全球各地。它有许多不同的品种和颜色，如红、黄、白、粉等。牡丹花朵通常呈圆形或椭圆形，有时还带有中心锥形纹理。 花朵呈现出各种不同的颜色，如单色、双色、多色等。牡丹是一种耐寒性强的植物，可以生活在低温下。因此，它可以盛开在不同气候条件下的小院内栽培。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('103e5414-0da2-4fba-b92f-0ba876e08939','玫瑰','100','送礼首选','http://image.flowermall.com/5c0a22e2-4fc8-44db-99b2-da5224791be1/80979691-1995978877.png','http://image.flowermall.com/5c0a22e2-4fc8-44db-99b2-da5224791be1/80979692-1995978878.png','http://image.flowermall.com/5c0a22e2-4fc8-44db-99b2-da5224791be1/80979693-1995978879.png',304,'玫瑰是一种常见的野生植物，分布在全球各地。它有许多不同的品种和颜色，如红、黄、白、粉等。玫瑰Flower通常呈圆形或椭圆形，有时还带有中心锥形纹理。 Flowers 呈现出各种不同的颜色，如单色、双色、多色等。玫瑰是一种受到人们的喜爱和敬重的植物，因为其花朵的美观与独特的香味。因此，它也被广泛用于婚礼、庆典、酒店等场合。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('17c3f20e-ef86-4857-9293-f29e52954a95','百合','400','节日鲜花','http://image.flowermall.com/5ecc6745-b79f-4959-9ffc-b6e2cbeaca8a/80979691-1601082088.png','http://image.flowermall.com/5ecc6745-b79f-4959-9ffc-b6e2cbeaca8a/80979692-1601082089.png','http://image.flowermall.com/5ecc6745-b79f-4959-9ffc-b6e2cbeaca8a/80979693-1601082090.png',132,'百合是一类常见的开放式的放置花，它的花瓣呈圆锥形或椭圆形，色彩缤纷，通常有淡绿、深绿、红色、白色等。百合花有着很强的生命力和耐受力，可以在晒伤风沙、阳光直射的环境下长期生长。它具有很高的装饰性和情感上的触动力，可以作为居住区、酒店、SPA等地方的装饰元素。同时，百合还可以作为花坛、桌巾等日常用品的装饰。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('26128d47-423b-4220-8047-544ff899db50','荷花','80','盆栽养殖','http://image.flowermall.com/04e7a75f-149b-4004-879c-73cad833457a/80979691-895900859.png','http://image.flowermall.com/04e7a75f-149b-4004-879c-73cad833457a/80979692-895900860.png','http://image.flowermall.com/04e7a75f-149b-4004-879c-73cad833457a/80979693-895900861.png',282,'荷花是一种常见的落叶草本植物，原产于我国四川、江西等地。它是中医治疗风寒症的重要成分，被称为清暑丹。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('2ad0d041-8c5f-4b70-a0ef-1ca2fd476dba','菊花','18','盆栽养殖','http://image.flowermall.com/77bc2254-8454-4df3-8725-dd574bba3ca1/00000-4123909921.png','http://image.flowermall.com/77bc2254-8454-4df3-8725-dd574bba3ca1/00001-4123909922.png','http://image.flowermall.com/77bc2254-8454-4df3-8725-dd574bba3ca1/00002-4123909923.png',22,'菊属于鸢尾属，有近400种品种，分布于全球各地，是人们喜爱的灌木。菊花呈圆锥形，颜色极其多样，常见的有白色、黄色、紫色、红色等。在中国，菊花一般用来做配菜或烹饪成品。除了食用外，菊还可以作为保健食品，因为它含有很多营养物质，如 vitamin C、B。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('36b9407f-746a-4956-988e-557122bc74d0','紫玫瑰','120','送礼首选','http://image.flowermall.com/4478d7ae-3cf7-4dce-bc7f-5e50049bfea9/00000-3028299347.png','http://image.flowermall.com/4478d7ae-3cf7-4dce-bc7f-5e50049bfea9/00001-3028299348.png','http://image.flowermall.com/4478d7ae-3cf7-4dce-bc7f-5e50049bfea9/00002-3028299349.png',66,'紫玫瑰（Peony）是中华民族传统文化中的重要元素，有着悠久的历史和文化背景。它具有美容、保健、升华精神的作用。紫玫瑰的成分包括多种物质，如糖、醋、苷等，含有丰富的维生素C、B1、B6等，同时具有抗氧化、防癌等作用。紫玫瑰可以作为一种美容护肤品使用，也可以当做食材，如炒菜、烹饪等。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('36b9407f-746a-4956-988e-557122bc742b','向日葵','110','送礼首选','http://image.flowermall.com/e68c61c2-95f5-47b3-afdc-a1920a0f81a7/80979691-4292793565.png','http://image.flowermall.com/e68c61c2-95f5-47b3-afdc-a1920a0f81a7/80979692-4292793566.png','http://image.flowermall.com/e68c61c2-95f5-47b3-afdc-a1920a0f81a7/80979693-4292793567.png',120,'向日葵，菊科向日葵属草本植物，茎粗壮，被白色粗硬毛；花托盘状，花黄色，舌状花不结实，管状花极多数，它的花语是：爱慕、光辉、忠诚、高傲。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('36b9407f-746a-4956-988e-557122bc73f4','一品红','90','盆栽养殖','http://image.flowermall.com/2f9ce5d0-50d1-4942-93ed-dc570bd44eb7/80979691-321838424.png','http://image.flowermall.com/2f9ce5d0-50d1-4942-93ed-dc570bd44eb7/80979692-321838425.png','http://image.flowermall.com/2f9ce5d0-50d1-4942-93ed-dc570bd44eb7/80979693-321838426.png',70,'一品红原产于南美洲，在中国台湾、四川、云南、广东等地有栽培。一品红还被制成花篮、礼品盆花和组合盆栽，以作为礼品馈赠和家庭布置。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('36b9407f-746a-4956-988e-55712c3c73f1','紫藜麦','40','盆栽养殖','http://image.flowermall.com/3edd3fe0-103b-4860-a338-0440d5a637df/80979691-3637056794.png','http://image.flowermall.com/3edd3fe0-103b-4860-a338-0440d5a637df/80979692-3637056795.png','http://image.flowermall.com/3edd3fe0-103b-4860-a338-0440d5a637df/80979693-3637056796.png',423,'紫藜麦是世界上人均消费最高的谷物，也是人们生活中不可或缺的一颗谷物。它不仅可以在饮食方面提供蛋白质和纤维，还经常被人们养在室内');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('36b9407f-746a-4956-188e-c4712c3c73f1','财富橘','260','盆栽养殖','http://image.flowermall.com/7a1ece91-0da7-430e-a764-8274008fe097/80979691-3820561831.png','http://image.flowermall.com/7a1ece91-0da7-430e-a764-8274008fe097/80979692-3820561832.png','http://image.flowermall.com/7a1ece91-0da7-430e-a764-8274008fe097/80979693-3820561833.png',140,'橘是指李皮科中的一种，它是人们喜爱的水果，也是重要的农业作物。花呈圆形或椭圆形，颜色有淡黄色、黄色、 橙色等。在中国，橘直接作为食物。除了吃外，橘还可以作为药物，因为它含有很多营养物质，如 vitamin A、C、K、B complex、potassium 等。');
+
+
+select product_imgurl from t_product;
+select count(*) from t_product;
+
+use flowerdb;
+DROP TABLE IF EXISTS t_cart;
+CREATE TABLE t_cart(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  user_id varchar(100) DEFAULT NULL,
+  product_id varchar(100) DEFAULT NULL,
+  product_image varchar(500) DEFAULT NULL,
+  product_name varchar(100) DEFAULT NULL,
+  product_price double DEFAULT NULL,
+  num int(11) DEFAULT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+
+/*Data for the table t_cart */
+insert  into t_cart(id,user_id,product_id,product_image,product_name,product_price,num) values
+ (29,'f577f9f9-159e-4aaf-9332-fd7b294bc218','05e20c1a-0401-4c0a-82ab-6fb0f37db397','http://image.flowermall.com/3d78a6bf-247e-4abf-9416-c3312659866d/80979691-1905809726.png','蝴蝶兰',70,1),
+(31,'f577f9f9-159e-4aaf-9332-fd7b294bc218','09f47493-214d-44bc-927d-6ce0bf89a057','http://image.flowermall.com/5b834b8b-9609-4e2c-8b8f-cccf49e38ca9/80979691-2438928564.png','牡丹',90,5),
+(33,'f577f9f9-159e-4aaf-9332-fd7b294bc218','103e5414-0da2-4fba-b92f-0ba876e08939','http://image.flowermall.com/5c0a22e2-4fc8-44db-99b2-da5224791be1/80979691-1995978877.png','玫瑰',100,3);
+
+use flowerdb;
+DROP TABLE IF EXISTS t_order;
+CREATE TABLE t_order (
+  order_id char(36) NOT NULL DEFAULT '',
+  order_money double DEFAULT '0',
+  order_receiverinfo varchar(255) DEFAULT '',
+  order_paystate int(11) DEFAULT '0',
+  order_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  user_id char(36) DEFAULT NULL,
+  PRIMARY KEY (order_id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table t_order */
+insert  into t_order(order_id,order_money,order_receiverinfo,order_paystate,order_time,user_id) values 
+('153b198e-228d-435b-91ab-58e6498c00f9',260.0,'华南师范大学软件学院',0,'2022-06-15 10:00:58','f577f9f9-159e-4aaf-9332-fd7b294bc218');
+insert  into t_order(order_id,order_money,order_receiverinfo,order_paystate,order_time,user_id) values
+('3bca1c96-2a0f-4b0d-a684-106924823aa2',300.0,'华南师范大学软件学院',0,'2022-06-15 10:00:18','f577f9f9-159e-4aaf-9332-fd7b294bc218');
+insert  into t_order(order_id,order_money,order_receiverinfo,order_paystate,order_time,user_id) values
+('da57776f-9fae-431d-9359-18492ae13858',470.0,'华南师范大学软件学院',0,'2022-06-16 00:19:35','f577f9f9-159e-4aaf-9332-fd7b294bc218');
+insert  into t_order(order_id,order_money,order_receiverinfo,order_paystate,order_time,user_id) values
+('6f9378f3-c400-4a7a-9e96-5162bc25c842',1100.0,'华南师范大学软件学院',0,'2022-06-16 00:20:15','f577f9f9-159e-4aaf-9332-fd7b294bc218');
+/*Table structure for table t_order_item */
+
+DROP TABLE IF EXISTS t_order_item;
+
+CREATE TABLE t_order_item (
+  id bigint(20) NOT NULL AUTO_INCREMENT,
+  order_id char(100) DEFAULT NULL,
+  product_id char(36) DEFAULT NULL,
+  num int(11) DEFAULT '0',
+  product_image varchar(500) DEFAULT NULL,
+  product_name varchar(100) DEFAULT NULL,
+  product_price double DEFAULT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8;
+
+/*Data for the table t_order_item */
+
+insert  into t_order_item(id,order_id,product_id,num,product_image,product_name,product_price) values 
+(null,'6f9378f3-c400-4a7a-9e96-5162bc25c842','05e20c1a-0401-4c0a-82ab-6fb0f37db397',1,'http://image.flowermall.com/3d78a6bf-247e-4abf-9416-c3312659866d/80979691-1905809726.png','蝴蝶兰',70);
+insert  into t_order_item(id,order_id,product_id,num,product_image,product_name,product_price) values 
+(null,'6f9378f3-c400-4a7a-9e96-5162bc25c842','09f47493-214d-44bc-927d-6ce0bf89a057',1,'http://image.flowermall.com/5b834b8b-9609-4e2c-8b8f-cccf49e38ca9/80979691-2438928564.png','牡丹',90);
+insert  into t_order_item(id,order_id,product_id,num,product_image,product_name,product_price) values 
+(null,'6f9378f3-c400-4a7a-9e96-5162bc25c842','103e5414-0da2-4fba-b92f-0ba876e08939',1,'http://image.flowermall.com/5c0a22e2-4fc8-44db-99b2-da5224791be1/80979691-1995978877.png','玫瑰',100);
+
+insert  into t_order_item(id,order_id,product_id,num,product_image,product_name,product_price) values 
+(null,'da57776f-9fae-431d-9359-18492ae13858','103e5414-0da2-4fba-b92f-0ba876e08939',3,'http://image.flowermall.com/5c0a22e2-4fc8-44db-99b2-da5224791be1/80979691-1995978877.png','玫瑰',100);
+
+
+insert  into t_order_item(id,order_id,product_id,num,product_image,product_name,product_price) values 
+(null,'3bca1c96-2a0f-4b0d-a684-106924823aa2','36b9407f-746a-4956-988e-557122bc742b',1,'http://image.flowermall.com/e68c61c2-95f5-47b3-afdc-a1920a0f81a7/80979691-4292793565.png','向日葵',110);
+insert  into t_order_item(id,order_id,product_id,num,product_image,product_name,product_price) values 
+(null,'3bca1c96-2a0f-4b0d-a684-106924823aa2','05e20c1a-0401-4c0a-82ab-6fb0f37db397',1,'http://image.flowermall.com/3d78a6bf-247e-4abf-9416-c3312659866d/80979691-1905809726.png','蝴蝶兰',70);
+insert  into t_order_item(id,order_id,product_id,num,product_image,product_name,product_price) values 
+(null,'3bca1c96-2a0f-4b0d-a684-106924823aa2','09f47493-214d-44bc-927d-6ce0bf89a057',1,'http://image.flowermall.com/5b834b8b-9609-4e2c-8b8f-cccf49e38ca9/80979691-2438928564.png','牡丹',90);
+insert  into t_order_item(id,order_id,product_id,num,product_image,product_name,product_price) values 
+(null,'3bca1c96-2a0f-4b0d-a684-106924823aa2','103e5414-0da2-4fba-b92f-0ba876e08939',2,'http://image.flowermall.com/5c0a22e2-4fc8-44db-99b2-da5224791be1/80979691-1995978877.png','玫瑰',100);
+
+insert  into t_order_item(id,order_id,product_id,num,product_image,product_name,product_price) values 
+(null,'153b198e-228d-435b-91ab-58e6498c00f9','36b9407f-746a-4956-988e-557122bc742b',10,'http://image.flowermall.com/e68c61c2-95f5-47b3-afdc-a1920a0f81a7/80979691-4292793565.png','向日葵',110);
+
+
+select t_order.order_id,order_money,num,product_id,product_name,product_price from t_order,t_order_item 
+where t_order.order_id=t_order_item.order_id;
+
+

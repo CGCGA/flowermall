@@ -1,0 +1,56 @@
+#flower
+server {
+ 	   	listen 80;
+		server_name www.flowermall.com;
+		location /user {
+			proxy_pass http://127.0.0.1:9005/zuul-user/user/manage;
+			add_header 'Access-Control-Allow-Credentials' 'true';
+			add_header 'Access-Control-Allow-Origin' '*'; 
+		}
+		location /products {
+			proxy_pass http://127.0.0.1:9005/zuul-product/product/manage;
+			add_header 'Access-Control-Allow-Credentials' 'true';
+			add_header 'Access-Control-Allow-Origin' '*'; 
+		}
+
+                    location /uploadImg {
+                              proxy_pass http://127.0.0.1:9005/zuul-pic/pic/upload;
+			add_header 'Access-Control-Allow-Credentials' 'true';
+			add_header 'Access-Control-Allow-Origin' '*'; 
+                     }
+
+                    location /categorys{
+			proxy_pass http://127.0.0.1:8090/categorys;
+		}
+                    location /cart{
+			proxy_pass http://127.0.0.1:9005/zuul-cart/cart/manage;
+			add_header 'Access-Control-Allow-Credentials' 'true';
+			add_header 'Access-Control-Allow-Origin' '*'; 
+
+		}
+                    location /order {
+                            proxy_pass http://127.0.0.1:9005/zuul-order/order/manage;
+                            add_header 'Access-Control-Allow-Credentials' 'true';
+                            add_header 'Access-Control-Allow-Origin' '*'; 
+                   }
+                   location /seckills {
+                            proxy_pass http://127.0.0.1:9005/zuul-seckill/seckill/manage;
+                   	        add_header 'Access-Control-Allow-Credentials' 'true';
+                   	        add_header 'Access-Control-Allow-Origin' '*'; 
+                   }
+
+
+		location /{
+			root flowermall-static;
+			index index.html;
+		}
+    }  
+server {
+		listen       80;
+		server_name  image.flowermall.com;
+		location / {
+		       root G:\\nginx-1.9.9\\flowers;
+		}
+
+
+	}

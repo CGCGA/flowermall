@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.scnu</groupId>
+  <artifactId>folower-paraent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>folower-paraent</name>
+  <url>http://maven.apache.org</url>
+  
+  <modules>
+    <module>flowermall-common-repository</module>
+    <module>flowermall-common-resources</module>
+    <module>eureka_work</module>
+    <module>eureka_work2</module>
+    <module>config-server</module>
+    <module>flowermall-zuul</module>
+      <module>flowermall-common-rediscluster</module>
+  </modules>
+  
+  <parent>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-parent</artifactId>
+  	<version>1.5.9.RELEASE</version>
+  </parent>
+
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+  </properties>
+  
+   <dependencyManagement>
+   <dependencies>
+   	<dependency>
+    	<groupId>org.springframework.cloud</groupId>
+    	<artifactId>spring-cloud-dependencies</artifactId>
+    	<version>Edgware.RELEASE</version>
+    	<type>pom</type>
+    	<scope>import</scope>
+    </dependency>  
+   </dependencies>
+  </dependencyManagement>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+    		<groupId>org.apache.commons</groupId>
+    		<artifactId>commons-lang3</artifactId>
+    		<version>3.3.2</version>
+    </dependency>
+    
+     <dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-test</artifactId>
+    	<scope>test</scope>
+     </dependency>
+
+    <dependency>
+    	<groupId>org.springframework.cloud</groupId>
+    	<artifactId>spring-cloud-starter-eureka</artifactId>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.springframework.cloud</groupId>
+    	<artifactId>spring-cloud-starter-ribbon</artifactId>
+    </dependency> 
+    
+    <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    
+    <!-- 添加支持redis的简化依赖 -->
+    <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-redis</artifactId>
+         <version>1.4.7.RELEASE</version>
+    </dependency>
+    
+    <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-lang3</artifactId>
+         <version>3.3.2</version>
+    </dependency>
+    
+  </dependencies>
+  
+  
+</project>
