@@ -9,7 +9,7 @@
 
 #### 安装教程
 
-1. 子系统在父级文件夹下建立![image](Y:\高级软件实作\源码\flowermall\flowermall\image.png)
+1. 子系统在父级文件夹下建立![image](./image.png)
 2. flowerdb.txt为mysql数据表
 3. flowers文件夹为nginx静态图片
 
