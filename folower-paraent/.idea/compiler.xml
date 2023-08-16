@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
+        <module name="flowermall-common-rediscluster" />
+        <module name="flowermall-common-repository" />
+        <module name="flowermall-zuul" />
+        <module name="flowermall-common-product" />
+        <module name="flowermall-common-user" />
+        <module name="flowermall-common-resources" />
+        <module name="eureka_work" />
+        <module name="eureka_work2" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

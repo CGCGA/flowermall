@@ -18,6 +18,8 @@
     <module>config-server</module>
     <module>flowermall-zuul</module>
       <module>flowermall-common-rediscluster</module>
+      <module>flowermall-common-user</module>
+      <module>flowermall-common-product</module>
   </modules>
   
   <parent>

@@ -1,0 +1,66 @@
+﻿@charset "utf-8";
+body{
+	background-image: url("../img/regist/zc.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+	font-family: "微软雅黑";
+}
+form{
+	width: 650px;
+	margin: 0 auto;
+}
+h1{
+	width: 300px;/* */
+	color: #990000;
+	margin: 190px auto 30px;
+	text-align: center;
+}
+
+table{
+	margin: 0 auto;
+	
+	/*text-align: center;*/
+}
+tr{
+	height: 50px;
+}
+td{
+	padding-top: 10px;
+}
+.tds{
+	font-size: 18px;
+	text-align: center;
+}
+
+input{
+	border: 1px solid #cccccc;
+	width: 150px;
+	height: 22px;
+}
+
+input[name='valistr']{
+	width:80px;
+}
+
+img{
+	vertical-align: top;
+}
+
+.sub_td{
+	text-align: center;
+}
+
+input[type='submit']{
+	border: none;
+	width:280px;
+	height: 34px;
+	font-size: 20px;
+	color: #FFFFFF;
+	font-weight: bolder;
+	background-color: #7BC144;
+}
+
+input[type='submit']:hover{
+	background-color: #66bb25;
+}
+

@@ -7,24 +7,24 @@ DROP TABLE IF EXISTS t_user;
 
 CREATE TABLE t_user (
   user_id char(36) NOT NULL COMMENT '用户id uuid 主键',
-  user_phone varchar(100) NOT NULL COMMENT '用户登陆电话',
+  user_name varchar(100) NOT NULL COMMENT '用户账号',
   user_password varchar(32) NOT NULL DEFAULT '""' COMMENT '用户密码 md5',
   user_nickname varchar(50) DEFAULT '上帝' COMMENT '用户昵称',
   user_email varchar(30) DEFAULT '""' COMMENT '用户邮箱',
   user_intro varchar(100) DEFAULT '""' COMMENT '用户介绍',
   PRIMARY KEY (user_id),
-  UNIQUE KEY UN_user_phone (user_phone)
+  UNIQUE KEY UN_user_phone (user_name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 /*Data for the table t_user */
-insert  into t_user(user_id,user_phone,user_password,user_nickname,user_email,user_intro) 
+insert  into t_user(user_id,user_name,user_password,user_nickname,user_email,user_intro) 
 values ('f577f9f9-159e-4aaf-9332-fd7b294bc218','12345678987',md5('123'),'李明','lmm@example.com','我是一个学生，喜欢看书和听音乐。我热爱编程，正在学习Java语言。');
-insert  into t_user(user_id,user_phone,user_password,user_nickname,user_email,user_intro) 
+insert  into t_user(user_id,user_name,user_password,user_nickname,user_email,user_intro) 
 values ('f577f9f9-159e-4aaf-9332-fd7b294bc208','13912345678',md5('123'),'李白','lbb@haha.com','李白（701－762年），字**祺，号**青莲居士，是**唐朝**伟大的诗人、文学家和政治家。他的诗词饱含情感，表现了中国古典诗歌的最高艺术成就。');
-insert  into t_user(user_id,user_phone,user_password,user_nickname,user_email,user_intro) 
+insert  into t_user(user_id,user_name,user_password,user_nickname,user_email,user_intro) 
 values ('f577f9f9-159e-4aaf-9332-fd7b294bc219','13711225647',md5('123'),'刘翔','liuxiang@example.com','我是一个运动员，热爱健身和锻炼。我喜欢参加各种比赛和活动，并且非常关注健康。我也喜欢唱歌和跳舞。');
-insert  into t_user(user_id,user_phone,user_password,user_nickname,user_email,user_intro) 
+insert  into t_user(user_id,user_name,user_password,user_nickname,user_email,user_intro) 
 values ('f577f9f9-159e-4aaf-9332-fd7b294bcd19','15300000006',md5('123'),'北方人','beifangren@sina.com','我是一个来自北方的网友。');
 
 
