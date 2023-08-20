@@ -10,12 +10,17 @@
         <module name="flowermall-common-rediscluster" />
         <module name="flowermall-common-repository" />
         <module name="flowermall-zuul" />
+        <module name="flowermall-common-cart" />
         <module name="flowermall-common-product" />
         <module name="flowermall-common-user" />
         <module name="flowermall-common-resources" />
+        <module name="flowermall-common-order" />
         <module name="eureka_work" />
         <module name="eureka_work2" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="flowermall-common-cartuntitled" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

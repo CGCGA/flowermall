@@ -20,6 +20,14 @@ public class ProductController {
         EasyUIResult result = productService.productPageQuery(page, rows);
         return result;
     }
+
+    @RequestMapping("/product/manage/search")
+    public EasyUIResult productProdQuery(String prodName){
+        System.out.println(prodName);
+        EasyUIResult result = productService.productProdQuery(prodName);
+        return result;
+    }
+
     @RequestMapping("/product/manage/item/{prodId}")
     public String queryById(@PathVariable String prodId) {
         String productKey = "product_query_"+prodId;

@@ -10,7 +10,7 @@ a{color:#333;}
 a:hover{color:#F00;}
 
 /*mianCont*/
-.mianCont{width:1200px;margin:0 auto; margin-top: 10px; background-color: #fff;}
+.mianCont{width:1200px;margin:0 auto; padding-top: 20px; background-color: #fff;}
 .top{height:25px;line-height:100px; position:relative;}
 .top span a{color:#F00;}
 .top span a:hover{color:#0C3;}
@@ -132,7 +132,7 @@ a:hover{color:#F00;}
 .leftPorNav li a{ display:block;width:151px;padding-left:25px; background:url(../images/zuojian3.jpg) 151px center no-repeat;border-bottom:#efefef 1px solid;}
 .leftPorNav li a:hover{color:#7BC144;border-bottom:#7BC144 1px solid; font-weight:bold; background:none;}
 .leftPorNav .chilInPorNav{left:175px;}
-.contRight{width:760px;float:right;border-right:#efefef 1px solid;}
+.contRight{width:970px;float:right;border-right:#efefef 1px solid; margin-left: 10px;}
 .contRight .frProList{ display:block;}
 .contRight .frProList dl.frListDlstyle{border:#ccc 1px solid;border-right:#ccc 1px solid;}
 .contRight .frProList dd{line-height:15px;margin-top:3px;}
@@ -283,8 +283,9 @@ a:hover{color:#F00;}
 .MagicZoomLoading img {
 	padding-top:	3px !important;
 }
-.proBoxRight{width:445px;float:right;line-height:25px;font-size:14px;}
+.proBoxRight{width:645px;float:right;line-height:25px;font-size:14px;}
 .proTitle{height:40px;line-height:40px;font-size:16px; font-family:"微软雅黑";}
+
 .rongliang{}
 .rongliang li{height:18px;line-height:18px;width:50px;border:#CCC 1px solid;margin: 5px 5px 0 0; text-align:center; font-family:"微软雅黑";font-size:12px;cursor:pointer;float:left;}
 .rongliang li.rongStyle{border:#7bc144 1px solid;color:#7bc144;}

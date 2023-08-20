@@ -41,7 +41,7 @@
                             alert("啥也别说了，你的用户超时了,赶紧查查redis还有数据没有");
                             window.location.href="./login.html";
                             return;}
-                        var html =_data.userName+"，欢迎来到京淘！<a href=\"javascript:void(0)\" class=\"link-logout\" onclick='logout()'>[退出]</a>  ";
+                        var html =_data.userName+"，欢迎来到鲜花商城！<a href=\"javascript:void(0)\" class=\"link-logout\" onclick='logout()'>[退出]</a>  ";
                         userId=_data.userId;
                         $("#loginbar").html(html);
                         query(userId);
@@ -142,7 +142,7 @@
         function search(a){
             var query=document.getElementById(a).value;
            // alert(query);
-            window.location.href="./search.html?query="+query;
+            window.location.href="./search.html?prodName="+query;
 
         }
     </script>
@@ -152,7 +152,7 @@
     <div id="line1">
         <div id="content">
             <li class="fore1" id="loginbar" clstag="homepage|keycount|home2013|01b">
-                <span id="head_span"\\\x><a href="login.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="regist.html">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="manage.html">后台</a></span>
+                <span id="head_span"\\\x><a href="login.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="regist.html">注册</a>&nbsp;&nbsp;</span>
 
             </li>
         </div>
@@ -165,13 +165,12 @@
 			<a id="goto_order" href="./myorder.html">我的订单</a>
 			<a id="goto_cart" href="./mycart.html">我的购物车</a>
 		</span>
-        <img id="erwm" src="img/head/qr.jpg"/>
     </div>
     <div id="line3">
         <div id="content">
             <ul>
                 <li><a href="./index.html">首页</a></li>
-                <li><a href="./product-list.html?page=1&rows=5">全部商品</a></li>
+                <li><a href="./product-list.html?page=1&rows=20">全部商品</a></li>
                 <li><a href="#">热带鲜花</a></li>
                 <li><a href="#">送礼首选</a></li>
                 <li><a href="#">节日鲜花</a></li>
@@ -231,10 +230,10 @@
         <div class="inHLeft">
          <h4>会员服务</h4>
          <ul class="inHeList">
-          <li><a href="reg.html">会员注册</a></li>
+          <li><a href="regist.html">会员注册</a></li>
           <li><a href="login.html">会员登录</a></li>
-          <li><a href="order.html">购物车</a></li>
-          <li><a href="order.html">我的订单</a></li>
+          <li><a href="mycart.html">购物车</a></li>
+          <li><a href="myorder.html">我的订单</a></li>
           <div class="clears"></div>
          </ul><!--inHeList/-->
         </div><!--inHLeft/-->
@@ -257,7 +256,7 @@
         <a href="help.htmll">帮助中心</a>
         </p>
         <p>
-         版权所有：scnu鲜花有限公司 版权所有  Copyright 2022-2032   ICP备00000000号   <a href="#" target="_blank">模板之家</a>   
+         版权所有：scnu鲜花有限公司 版权所有  Copyright 2022-2032   ICP备00000000号
         </p>
        </div><!--footer/-->
     </div>

@@ -16,5 +16,9 @@ public interface ProductMapper {
 
     public void productUpdate(Product product);
 
+    public List<Product> queryByName(String prodName);
+
+    public Integer queryprodTotal(String prodName);
+
 
 }

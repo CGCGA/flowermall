@@ -83,4 +83,20 @@ public class ProductService {
         jedis.del(lock);
     }
 
+    //产品搜索
+    public EasyUIResult productProdQuery(String prodName) {
+        EasyUIResult result = new EasyUIResult();
+
+        String newprodName = "%"+prodName+"%";
+        //System.out.println(newprodName);
+
+        Integer total = productMapper.queryprodTotal(newprodName);
+
+        List<Product> pList = productMapper.queryByName(newprodName);
+
+        result.setTotal(total);
+        result.setRows(pList);
+        return result;
+    }
+
 }

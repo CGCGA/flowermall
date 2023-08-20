@@ -52,7 +52,7 @@ a{
 }
 #prod_content #prod_div{
 	width:222px;
-	height:347px;
+	height:333px;
 	border: 1px solid #D4D4D4;
 	margin-top:15px;
 	margin-right:18px;
@@ -60,6 +60,9 @@ a{
 }
 
 #prod_content #prod_div:nth-child(5),#prod_content #prod_div:nth-child(10){
+	margin-right:0px;
+}
+#prod_content #prod_div:nth-child(15),#prod_content #prod_div:nth-child(20){
 	margin-right:0px;
 }
 
@@ -81,7 +84,7 @@ a{
 #prod_content #gotocart_div{
 	float:left;
 	width:110px;
-	height:32px;
+	height:38px;
 	margin-top:15px;
 	text-align: center;
 	line-height:32px;
@@ -90,19 +93,19 @@ a{
 #gotocart_div a{
 	display: block;
 	width:110px;
-	height:32px;
+	height:36px;
 	color:#666666;
 	text-decoration: none;
 }
 #gotocart_div a:hover{
-	background-color: #FF0000;
+	background-color: #7BC144;
 	color:#fff;
 }
 
 #say_div{
 	float:left;
 	width:110px;
-	height:28px;
+	height:38px;
 	margin-top:15px;
 	text-align: center;
 	line-height:32px;

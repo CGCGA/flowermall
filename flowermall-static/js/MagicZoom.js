@@ -407,7 +407,7 @@ MagicZoom.prototype.replaceZoom = function(e, ael) {
     if (ael.href == this.bigImage.src) return;
     var newBigImage = document.createElement("IMG");
     newBigImage.id = this.bigImage.id;
-    newBigImage.src = ael.getElementsByTagName("img")[0].getAttribute("tsImgS");
+    newBigImage.src = ael.getElementsByTagName("img")[0].getAttribute("src");
     var p = this.bigImage.parentNode;
     p.replaceChild(newBigImage, this.bigImage);
     this.bigImage = newBigImage;
@@ -465,7 +465,7 @@ function MagicZoom_findZooms() {
                 }
             }
             if (aels[i].firstChild.tagName != 'IMG') throw "Invalid MagicZoom invocation!";
-            var rand = Math.round(Math.random() * 1000000);
+            var rand = Math.round(1);
             aels[i].style.position = "relative";
             aels[i].style.display = 'block';
             aels[i].style.outline = '0';

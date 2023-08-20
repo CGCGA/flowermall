@@ -6,8 +6,16 @@
         select  count(product_id) from t_product;
     </select>
 
+    <select id="queryprodTotal" resultType="int" parameterType="String">
+        select  count(product_id) from t_product  where product_name like #{prodName};
+    </select>
+
     <select id="queryByPage" resultType="Product">
         select * from t_product limit #{start}, #{rows}
+    </select>
+
+    <select id="queryByName" resultType="Product" parameterType="String">
+        select * from t_product where product_name like #{prodName};
     </select>
 
 

@@ -10,6 +10,25 @@ public class Product {
 	private Double  productPrice;
 	private String  productCategory;
 	private String  productImgurl;
+	private String  productDetailimgurl1;
+
+	public String getProductDetailimgurl1() {
+		return productDetailimgurl1;
+	}
+
+	public void setProductDetailimgurl1(String productDetailimgurl1) {
+		this.productDetailimgurl1 = productDetailimgurl1;
+	}
+
+	public String getProductDetailimgurl2() {
+		return productDetailimgurl2;
+	}
+
+	public void setProductDetailimgurl2(String productDetailimgurl2) {
+		this.productDetailimgurl2 = productDetailimgurl2;
+	}
+
+	private String  productDetailimgurl2;
 	private Integer productNum;
 	private String  productDescription;
 	//getter setter
@@ -58,8 +77,9 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", productPrice=" + productPrice
-				+ ", productCategory=" + productCategory + ", productImgurl=" + productImgurl + ", productNum="
-				+ productNum + ", productDescription=" + productDescription + "]";
+				+ ", productCategory=" + productCategory + ", productImgurl=" + productImgurl +
+				",productDetailimgurl1=" + productDetailimgurl1 + ",productDetailimgurl2=" + productDetailimgurl2
+				+ ", productNum=" + productNum + ", productDescription=" + productDescription + "]";
 	}
 	
 }

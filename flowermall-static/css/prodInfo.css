@@ -60,43 +60,49 @@ body {
 	border-left: 1px solid #CCCCCC;
 	float:left;
 }
-#right #right_top{
-	height:180px;	
+#right_top{
+	height:70px;	
 	border-bottom: 1px solid #CCCCCC;
 }
-#right #right_top #prod_name{
+#right_top #prod_name{
 	display: block;
 	color:#494949;
 	font-size:22px;
-	padding-top:50px;
+	padding-top:20px;
 	padding-left:30px;
 }
-#right #right_top #prod_desc{
+#prod_desc{
 	display: block;
-	color:#FF0000;
-	font-size:14px;
+	width: 780px;
+	margin: 30px;
+	padding: 20px;
+	font-size:18px;
 	padding-left:30px;
 }
-#right #right_middle{
-	height:270px;
+#detimg{
+	margin-left: 50px;
+	padding: 20px;
+}
+#right_middle{
+	height:220px;
 	line-height:35px;
 	border-bottom: 1px solid #CCCCCC;
 }
-#right #right_middle #right_middle_span{
+#right_middle #right_middle_span{
 	display: block;
-	padding-top:55px;
+	padding-top:35px;
 	margin-left:30px;
 	color:#666666;
 	font-size:16px;
 }
-#right #right_middle #delNum ,#right #right_middle #addNum{
+#right_middle #delNum ,#right_middle #addNum{
 	border: 1px solid #CCCCCC;
 	color:#999999;
 	padding:2px 7px;
 	text-decoration:none;
 	vertical-align: middle;
 }
-#right #right_middle #buyNumInp{
+#right_middle #buyNumInp{
 	border: 1px solid #CCCCCC;
 	width:40px;
 	height:24px;
@@ -105,11 +111,12 @@ body {
 	vertical-align: middle;
 }
 
-#right #right_bottom{
-	height:200px;
+#right_bottom{
+	height:100px;
 }
-#right #right_bottom .add_cart_but{
-	background-image: url("../img/prodInfo/jr.jpg");
+.add_cart_but{
+	background-color: #7bc144;
+	font-size:18px;
 	width:189px;
 	height:42px;
 	border-style:none;

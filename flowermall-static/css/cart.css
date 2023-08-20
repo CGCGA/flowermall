@@ -50,38 +50,62 @@
 	height:100px;
 	line-height:100px;
 }
-#prods img ,#prods span{
+#prods img{
+	margin-top: 5px;
 	vertical-align: middle;
 }
 #prods input[name='prodC']{
+	margin-top: 45px;
+	display: block;
+	float: left;
 	margin-left:40px;
 
 }
 
 #prods img{
+	display: block;
+	float: left;
 	margin-left:30px;
 	margin-bottom:4px;
 	border: 1px solid #DEDEDE;
 }
 
 #prods #prods_name{
-	margin-left:120px;
+	display: block;
+	float: left;
+	width: 60px;
+	margin-left:140px;
 	white-space: normal !important;
 }
 
 #prods #prods_price{
-	margin-left:190px;
+	display: block;
+	float: left;
+	width: 60px;
+	margin-left:150px;
+	width: 60px;
 }
 
 #prods #prods_buynum a{
+	display: block;
+	float: left;
+	margin-top: 20px;
+	width: 60px;
 	padding: 2px 8px;
 	border: 1px solid #CCC;
 	text-decoration: none;
 }
 #prods #prods_buynum{
+	display: block;
+	margin-top: 20px;
+	float: left;
+	width: 60px;
 	margin-left:135px;
+
 }
 #prods #prods_buynum #buyNumInp{
+	display: block;
+	float: left;
 	width:60px;
 	height:30px;
 	border-top: 1px solid #CCC;
@@ -92,6 +116,10 @@
 	vertical-align: middle;
 }
 .buyNumInp1{
+	margin-top: 30px;
+	display: block;
+	float: left;
+	margin-left:150px;
 	width:60px;
 	height:30px;
 	border-top: 1px solid #CCC;
@@ -102,12 +130,21 @@
 	vertical-align: middle;
 }
 #prods #prods_money{
-	margin-left:85px;
-}
-#prods #prods_del{
+	display: block;
+	float: left;
+	width: 50px;
 	margin-left:120px;
 }
+#prods #prods_del{
+	display: block;
+	float: left;
+	width: 60px;
+	margin-left:100px;
+}
 #prods #prods_del a{
+	display: block;
+	float: left;
+	width: 60px;
 	text-decoration:none;
 }
 
@@ -147,11 +184,11 @@
 	line-height:47px;
 	text-align: center;
 	text-decoration:none;
-	background-color: #D9141E;
+	background-color: #7BC144;
 	color: #FFF;
 	font-weight:bold;
 	font-size:24px;
 }
 #total #total_2 a:hover{
-	background-color: #DD4343;
+	background-color: #568d2b;
 }

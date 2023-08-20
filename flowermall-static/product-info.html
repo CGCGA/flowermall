@@ -20,9 +20,11 @@
     <link href="css/prodList.css" rel="stylesheet" type="text/css">
     <link href="css/prodInfo.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/logout.js"></script>
+    <script src="js/wb.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/MagicZoom.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/productinfo.js"></script>
     <meta charset="UTF-8">
-    <title>商品分页</title>
+    <title>鲜花介绍</title>
     <script type="text/javascript">
         var userId="";
         var productId="";
@@ -38,12 +40,20 @@
                 success:function(data){
                     //图片
                     var imgUrl=data.productImgurl;
+                    var proddesc1url=data.productDetailimgurl1;
+                    var proddesc2url=data.productDetailimgurl2;
                     productId=data.productId;
-                    document.getElementById("prod_img").src=imgUrl;
+                    document.getElementById("imgshow1").src=imgUrl;
                     document.getElementById("prod_name").innerText=data.productName;
                     document.getElementById("prod_desc").innerText=data.productDescription;
                     document.getElementById("prod_pric").innerText=data.productPrice;
                     document.getElementById("prod_num").innerText=data.productNum;
+                    document.getElementById("prod_det1").src=proddesc1url;
+                    document.getElementById("imgshow2").src=proddesc1url;
+                    document.getElementById("prod_det2").src=proddesc2url;
+                    document.getElementById("imgshow3").src=proddesc2url;
+                    document.getElementById("sim1").src=imgUrl;
+                    
                 }
             });
             var _ticket = $.cookie("EM_TICKET");
@@ -61,7 +71,7 @@
                         //alert("好啊2");
                         if(data.status == 200){
                             var _data = JSON.parse(data.data);//jackson
-                            var html =_data.userName+"，欢迎来到京淘！<a href=\"javascript:void(0)\" class=\"link-logout\" onclick='logout()'>[退出]</a>  \|<a href=\"http://www.easymall.com/manage.html\" class=\"link-logout\">[后台]</a>";
+                            var html =_data.userName+"，欢迎来到鲜花商城<a href=\"javascript:void(0)\" class=\"link-logout\" onclick='logout()'>[退出]</a>  ";
                             userId=_data.userId;
                             $("#loginbar").html(html);
                         }
@@ -110,7 +120,7 @@
     <div id="line1">
         <div id="content">
             <li class="fore1" id="loginbar" clstag="homepage|keycount|home2013|01b">
-                <span id="head_span"\\\x><a href="./login.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="./regist.html">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="./manage.html">后台</a></span>
+                <span id="head_span"\\\x><a href="./login.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="./regist.html">注册</a>&nbsp;&nbsp;</span>
 
             </li>
         </div>
@@ -123,63 +133,163 @@
 			<a id="goto_order" href="./myorder.html">我的订单</a>
 			<a id="goto_cart" href="./mycart.html">我的购物车</a>
 		</span>
-        <img id="erwm" src="img/head/qr.jpg"/>
     </div>
     <div id="line3">
         <div id="content">
             <ul>
                 <li><a href="./index.html">首页</a></li>
-                <li><a href="./product-list.html?page=1&rows=5">全部商品</a></li>
-                <li><a href="/web/sekill/list">秒杀商品</a></li>
-                <li><a href="#">电脑平板</a></li>
-                <li><a href="#">家用电器</a></li>
-                <li><a href="#">汽车用品</a></li>
-                <li><a href="#">食品饮料</a></li>
-                <li><a href="#">图书杂志</a></li>
-                <li><a href="#">服装服饰</a></li>
-                <li><a href="#">理财产品</a></li>
+                <li><a href="./product-list.html?page=1&rows=20">全部商品</a></li>
+                <li><a href="#">热带鲜花</a></li>
+                <li><a href="#">送礼首选</a></li>
+                <li><a href="#">节日鲜花</a></li>
+                <li><a href="#">盆栽养殖</a></li>
+                <li><a href="#">清新绿植</a></li>
+                <li><a href="#">美艳鲜花</a></li>
+                <li><a href="#">护理工具</a></li>
             </ul>
         </div>
     </div>
 </div>
-<div id="warp">
-    <div id="left">
-        <div id="left_top">
-            <img src="" id="prod_img">
-        </div>
-        <div id="left_bottom">
 
+
+
+<div class="mianCont" style="padding-top: 30px;">
+    
+    <div class="pntLeft">
+        <h2 class="Title">所有商品分类</h2>
+        <ul class="InPorNav">
+         <li><a href="./product-list.html?page=1&rows=20">热带鲜花</a>
+         </li>
+         <li><a href="./product-list.html?page=1&rows=20">送礼首选</a>
+         </li>
+         <li><a href="./product-list.html?page=1&rows=20">节日鲜花</a>
+         </li>
+         <li><a href="./product-list.html?page=1&rows=20">盆栽养殖</a>
+         </li>
+         <li><a href="./product-list.html?page=1&rows=20">清新绿植</a>
+         </li>
+         <li><a href="./product-list.html?page=1&rows=20">美艳鲜花</a>
+         </li>
+         <li><a href="./product-list.html?page=1&rows=20">护理工具</a>
+         </li>
+         <li><a href="./product-list.html?page=1&rows=20">水生系列</a>
+         </li>
+        </ul><!--InPorNav/-->
+       </div><!--pntLeft/-->
+
+       
+       <div class="contRight" style="border:0;">
+        <div class="proBox">
+        <div id="tsShopContainer">
+         <div id="tsImgS">
+            <a href="www.baidu.com" title="Images" class="MagicZoom" id="MagicZoom">
+                <img id="imgshow0" width="300" height="300" src="" />
+            </a>
         </div>
-    </div>
-    <div id="right">
-        <div id="right_top">
-            <span id="prod_name"><br/></span>
-            <br>
+         <div id="tsPicContainer">
+             <div id="tsImgSArrL" onclick="tsScrollArrLeft()"></div>
+             <div id="tsImgSCon">
+                 <ul>
+                     <li onclick="showPic(0)" rel="MagicZoom" ><img id="imgshow1" height="42" width="42" src="" /></li>
+                     <li onclick="showPic(1)" rel="MagicZoom"><img id="imgshow2" height="42" width="42" src="" /></li>
+                     <li onclick="showPic(2)" rel="MagicZoom"><img id="imgshow3" height="42" width="42" src="" /></li>
+                 </ul>
+             </div>
+             <div id="tsImgSArrR" onclick="tsScrollArrRight()"></div>
+         </div>
+         <script src="js/ShopShow.js"></script>
+         </div><!--tsShopContainer/-->
+         <div class="proBoxRight">
+
+            <div id="right_top">
+                <span id="prod_name"><br/></span>
+                <br>
+               <!--<span id="prod_desc"><br/></span>--> 
+            </div>
+            <div id="right_middle">
+                    <span id="right_middle_span">
+                        价格：<span class="price_red" id="prod_pric">1111</span>元<br/>
+                            运     费：满 100 免运费<br />
+                            服     务：由鲜花商城直接进行派送，并提供售后服务<br />
+                        库存：<span id="prod_num">1111</span>件<br />
+                            购买数量：
+                    <a href="javascript:void(0)" id="delNum" onclick="change(-1)">-</a>
+                    <input id="buyNumInp" name="buyNum" type="text" value="1" />
+                    <a href="javascript:void(0)" id="addNum" onclick="change(1)">+</a>
+                    </span>
+            </div>
+            <div id="right_bottom">
+                <input class="add_cart_but" type="button" value="加入购物车" onclick="addCart()" /> 
+            </div>
+
+           
+         </div><!--proRight/-->
+         <div class="clears"></div>
+         </div><!--proBox/-->
+         <ul class="fangyuan">
+           <li>商品描述</li>
+           <div class="clears"></div>
+         </ul><!--fangyuan/-->
+         
+
+            <p></p>
             <span id="prod_desc"><br/></span>
-        </div>
-        <div id="right_middle">
-				<span id="right_middle_span">
-                    EasyMall 价：<span class="price_red" id="prod_pric">1111</span>元<br/>
-			            运     费：满 100 免运费<br />
-			            服     务：由EasyMall负责发货，并提供售后服务<br />
-                    库存：<span id="prod_num">1111</span>件<br />
-			            购买数量：
-	            <a href="javascript:void(0)" id="delNum" onclick="change(-1)">-</a>
-	            <input id="buyNumInp" name="buyNum" type="text" value="1" />
-		        <a href="javascript:void(0)" id="addNum" onclick="change(1)">+</a>
-                </span>
-        </div>
-        <div id="right_bottom">
-            <input class="add_cart_but" type="button" onclick="addCart()"/>
-        </div>
+            <p></p>
+            <span id="prod_desc">
+            <img src="" id="prod_det1" style="width: 780px; height: 780px;">
+            <img src="" id="prod_det2" style="width: 780px; height: 780px;">
+            </span>
+         
+        </div><!--contRight/-->
+        <div class="clears"></div>
+        
+
+ 
+    <hr style="width: 1200px; border: 1px solid white;" />
+    <div class="inHelp">
+        <div class="inHLeft">
+         <h4>帮助中心</h4>
+         <ul class="inHeList">
+          <li><a href="help.html">购物指南</a></li>
+          <li><a href="help.html">支付方式</a></li>
+          <li><a href="help.html">售后服务</a></li>
+          <li><a href="about.html">企业简介</a></li>
+          <div class="clears"></div>
+         </ul><!--inHeList/-->
+        </div><!--inHLeft/-->
+        <div class="inHLeft">
+         <h4>会员服务</h4>
+         <ul class="inHeList">
+          <li><a href="reg.html">会员注册</a></li>
+          <li><a href="login.html">会员登录</a></li>
+          <li><a href="order.html">购物车</a></li>
+          <li><a href="order.html">我的订单</a></li>
+          <div class="clears"></div>
+         </ul><!--inHeList/-->
+        </div><!--inHLeft/-->
+        <div class="inHRight">
+         <h4>全国统一免费服务热线</h4>
+         <div class="telBox">400-0000-0000</div>
+         <div class="weibo">
+         <wb:follow-button uid="2991975565" type="red_1" width="67" height="24" ></wb:follow-button>
+         </div>
+        </div><!--inHRight/-->
+        <div class="clears"></div>
+       </div><!--inHelp/-->
+       <div class="footer">
+        <p>
+        <a href="./index.html">进入官网</a>&nbsp;|&nbsp;
+        <a href="index.html">商城首页</a>&nbsp;|&nbsp;
+        <a href="product.html">促销中心</a>&nbsp;|&nbsp;
+        <a href="order.html">我的订单</a>&nbsp;|&nbsp;
+        <a href="login.html">会员中心</a>&nbsp;|&nbsp;
+        <a href="help.htmll">帮助中心</a>
+        </p>
+        <p>
+         版权所有：scnu鲜花有限公司 版权所有  Copyright 2022-2032   ICP备00000000号   <a href="#" target="_blank">模板之家</a>   
+        </p>
+       </div><!--footer/-->
     </div>
-</div>
-<div id="common_foot">
-    <p>
-        Copyright © 2011-2015 达内软件技术有限公司 版权所有 保留一切权利 苏B2-20130048号 | 京ICP备09062682号-9
-        <br>
-        网络文化经营许可证苏网文[2012]0401-019号
-    </p>
 </div>
 </body>
 </html>

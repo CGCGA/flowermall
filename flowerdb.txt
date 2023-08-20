@@ -80,6 +80,34 @@ insert into t_product(product_id,product_name,product_price,product_category,pro
 values('36b9407f-746a-4956-188e-c4712c3c73f1','财富橘','260','盆栽养殖','http://image.flowermall.com/7a1ece91-0da7-430e-a764-8274008fe097/80979691-3820561831.png','http://image.flowermall.com/7a1ece91-0da7-430e-a764-8274008fe097/80979692-3820561832.png','http://image.flowermall.com/7a1ece91-0da7-430e-a764-8274008fe097/80979693-3820561833.png',140,'橘是指李皮科中的一种，它是人们喜爱的水果，也是重要的农业作物。花呈圆形或椭圆形，颜色有淡黄色、黄色、 橙色等。在中国，橘直接作为食物。除了吃外，橘还可以作为药物，因为它含有很多营养物质，如 vitamin A、C、K、B complex、potassium 等。');
 
 
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('01e20c1a-0401-4c0a-82ab-6fb0f37db397','海棠花','80','热带鲜花','http://image.flowermall.com/haitanghua/001-01.png','http://image.flowermall.com/haitanghua/001-02.png','http://image.flowermall.com/haitanghua/001-03.png',216,'海棠花自古以来是雅俗共赏的花，唐朝宰相贾耽的《花谱》一书称海棠为“花中神仙”，此外，海棠花还有“国艳”“花贵妃”“花尊贵”等美称，在皇家园林中常与玉兰、牡丹、桂花相配植，有“玉棠富贵”的意境。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('02e20c1a-0401-4c0a-82ab-6fb0f37db397','康乃馨','90','送礼首选','http://image.flowermall.com/kangnaixing/002-01.png','http://image.flowermall.com/kangnaixing/002-02.png','http://image.flowermall.com/kangnaixing/002-03.png',226,'康乃馨包括许多变种与杂交种，在温室里几乎可以连续不断开花。花朵丰富，有多种形状和颜色。通常香气四溢，开花时间长，非常适合花束和花园。它们以其美丽，魅力，丁香般的香味和持久的新鲜度而受到重视。1907年起，开始以粉红色康乃馨作为母亲节的象征，故今常被作为献给母亲的花。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('03e20c1a-0401-4c0a-82ab-6fb0f37db397','兰花','100','盆栽养殖','http://image.flowermall.com/lanhua/003-01.png','http://image.flowermall.com/lanhua/003-02.png','http://image.flowermall.com/lanhua/003-03.png',236,'兰花是一种风格独异的花卉，它的观赏价值很高。兰花的花色淡雅，其中以嫩绿、黄绿的居多，但尤以素心者为名贵。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('04e20c1a-0401-4c0a-82ab-6fb0f37db397','铃兰','110','盆栽养殖','http://image.flowermall.com/linglan/004-01.png','http://image.flowermall.com/linglan/004-02.png','http://image.flowermall.com/linglan/004-03.png',246,'铃兰具有观赏价值，可将其栽种在阳台、窗台处装饰或案头处点缀；适合花坛、花境或林缘栽培观赏；花可用来提取芳香油。铃兰花语：纤细、希望、纯洁。花悬若铃串，清香四溢。有谷中百合之称。铃兰是香料植物，也是多个国家的国花。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('15e20c1a-0401-4c0a-82ab-6fb0f37db397','满天星','120','送礼首选','http://image.flowermall.com/mantianxing/005-01.png','http://image.flowermall.com/mantianxing/005-02.png','http://image.flowermall.com/mantianxing/005-03.png',256,'满天星初夏白色小花不断，花朵繁盛细致、分布匀称。犹如繁星，朦胧迷人，又好似满树盖雪，清丽可爱，适宜于花坛、路边和花篱栽植，也非常适合盆栽观赏和盆景制作。满天星同样也是插花中必不可少的填充花材，一束花中插入几枝满天星，便平添了几分妩媚之美。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('06e20c1a-0401-4c0a-82ab-6fb0f37db397','梅花','130','盆栽养殖','http://image.flowermall.com/meihua/006-01.png','http://image.flowermall.com/meihua/006-02.png','http://image.flowermall.com/meihua/006-03.png',266,'梅花是中国十大名花之首，与兰花、竹子、菊花一起列为四君子，与松、竹并称为“岁寒三友”。在中国传统文化中，梅以它的高洁、坚强、谦虚的品格，给人以立志奋发的激励。在严寒中，梅开百花之先，独天下而春。梅花色白雅洁，在冬末春初开花，枝干苍古，植为盆景、庭木尤富观赏价值。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('07e20c1a-0401-4c0a-82ab-6fb0f37db397','桃花','140','盆栽养殖','http://image.flowermall.com/taohua/007-01.png','http://image.flowermall.com/taohua/007-02.png','http://image.flowermall.com/taohua/007-03.png',276,'桃花具有很好的实用价值，既可作为食物用，又可作为药用，《岭南采药录》记载：“带蒂下药，能凉血解毒，痘疹通用之”。古人曾用“人面桃花相映红”来赞美少女娇艳的姿容，其实桃花确实有美颜的功效，《神农百草经》里就谈到，桃花具有“令人好颜色”的作用。桃花色彩艳丽，是早春重要的观花树种，人们也用它来象征春天的到来。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('08e20c1a-0401-4c0a-82ab-6fb0f37db397','郁金香','150','送礼首选','http://image.flowermall.com/yujinxiang/008-01.png','http://image.flowermall.com/yujinxiang/008-02.png','http://image.flowermall.com/yujinxiang/008-03.png',286,'郁金香为世界观赏花卉，花朵似荷花，花色繁多，色彩丰润、艳丽，为春季球根花卉，矮壮品种宜布置春季花坛，鲜艳夺目。郁金香是荷兰的国花，每到暮春时节，荷兰大地郁金香鲜花盛开，荷兰人们便会举行各种活动来庆祝郁金香的丰收。');
+
+insert into t_product(product_id,product_name,product_price,product_category,product_imgurl,product_detailimgurl1,product_detailimgurl2,product_num,product_description) 
+values('09e20c1a-0401-4c0a-82ab-6fb0f37db397','紫罗兰','160','热带鲜花','http://image.flowermall.com/ziluolan/009-01.png','http://image.flowermall.com/ziluolan/009-02.png','http://image.flowermall.com/ziluolan/009-03.png',296,'紫罗兰在古希腊是富饶多产的象征，雅典以它作为徽章旗帜上的标记，是美国罗得岛州的州花，花语是“永恒的美与爱”。');
+
+
 select product_imgurl from t_product;
 select count(*) from t_product;
 
@@ -116,13 +144,13 @@ CREATE TABLE t_order (
 
 /*Data for the table t_order */
 insert  into t_order(order_id,order_money,order_receiverinfo,order_paystate,order_time,user_id) values 
-('153b198e-228d-435b-91ab-58e6498c00f9',260.0,'华南师范大学软件学院',0,'2022-06-15 10:00:58','f577f9f9-159e-4aaf-9332-fd7b294bc218');
+('153b198e-228d-435b-91ab-58e6498c00f9',260.0,'华南师范大学软件学院',0,'2022-06-15 10:00:58','f577f9f9-159e-4aaf-9332-fd7b294bc208');
 insert  into t_order(order_id,order_money,order_receiverinfo,order_paystate,order_time,user_id) values
 ('3bca1c96-2a0f-4b0d-a684-106924823aa2',300.0,'华南师范大学软件学院',0,'2022-06-15 10:00:18','f577f9f9-159e-4aaf-9332-fd7b294bc218');
 insert  into t_order(order_id,order_money,order_receiverinfo,order_paystate,order_time,user_id) values
-('da57776f-9fae-431d-9359-18492ae13858',470.0,'华南师范大学软件学院',0,'2022-06-16 00:19:35','f577f9f9-159e-4aaf-9332-fd7b294bc218');
+('da57776f-9fae-431d-9359-18492ae13858',470.0,'华南师范大学软件学院',0,'2022-06-16 00:19:35','f577f9f9-159e-4aaf-9332-fd7b294bc219');
 insert  into t_order(order_id,order_money,order_receiverinfo,order_paystate,order_time,user_id) values
-('6f9378f3-c400-4a7a-9e96-5162bc25c842',1100.0,'华南师范大学软件学院',0,'2022-06-16 00:20:15','f577f9f9-159e-4aaf-9332-fd7b294bc218');
+('6f9378f3-c400-4a7a-9e96-5162bc25c842',1100.0,'华南师范大学软件学院',0,'2022-06-16 00:20:15','f577f9f9-159e-4aaf-9332-fd7b294bcd19');
 /*Table structure for table t_order_item */
 
 DROP TABLE IF EXISTS t_order_item;
@@ -166,5 +194,3 @@ insert  into t_order_item(id,order_id,product_id,num,product_image,product_name,
 
 select t_order.order_id,order_money,num,product_id,product_name,product_price from t_order,t_order_item 
 where t_order.order_id=t_order_item.order_id;
-
-

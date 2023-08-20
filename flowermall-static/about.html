@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>关于我们</title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/foot.css"/>
+    <link type="text/css" href="css/css.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/head.css"/>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="js/base-v1.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-1.2.6.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/cookie.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js" charset="utf-8"></script>
+    <script type="text/javascript" src="s/base-2011.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-extend.js"></script>
+    <script type="text/javascript" src="js/logout.js"></script>
+    <script type="text/javascript" src="js/lib-v1.js" charset="utf-8"></script>
+    <link href="css/prodList.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<script type="text/javascript">
+    window.onload=function(){
+        var userId="";
+        var _ticket = $.cookie("EM_TICKET");
+        if(!_ticket){
+            return ;
+        }
+
+        //当dataType类型为jsonp时，jQuery就会自动在请求链接上增加一个callback的参数
+        $.ajax({
+            url : "http://www.flowermall.com/user/query/" + _ticket,
+            dataType : "json",
+            type : "GET",
+            success : function(data){
+                //alert("好啊2");
+                if(data.status == 200){
+                    var _data = JSON.parse(data.data);//jackson
+                    var html =_data.userName+"，欢迎来到鲜花商城！<a href=\"javascript:void(0)\" class=\"link-logout\" onclick='logout()'>[退出]</a> ";
+                    userId=_data.userId;
+                    $("#loginbar").html(html);
+                }
+
+            },
+            error : function(){
+                alert('index error.');
+            }
+        });
+    }
+    function search(a){
+        var query=document.getElementById(a).value;
+
+        window.location.href="./search.html?prodName="+query;
+
+    }
+
+
+</script>
+<div id="common_head">
+    <div id="line1">
+        <div id="top">
+            <li class="fore1" id="loginbar" clstag="homepage|keycount|home2013|01b">
+                <span id="head_span"\\\x><a href="login.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="regist.html">注册</a>&nbsp;&nbsp;</span>
+            </li>
+        </div>
+    </div>
+    <div id="line2">
+        <img id="logo" src="img/head/logo.jpg"/>
+        <input type="text" value="" accesskey="s" id="key" autocomplete="off" onkeydown="javascript:if(event.keyCode==13) search('key');"/>
+        <input type="button" value="搜 索" onclick="search('key')"/>
+
+        
+
+        <span id="goto">
+			<a id="goto_order" href="./myorder.html">我的订单</a>
+			<a id="goto_cart" href="./mycart.html">我的购物车</a>
+		</span>
+    </div>
+    <div id="line3">
+        <div id="content">
+            <ul>
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./product-list.html?page=1&rows=20">全部商品</a></li>
+                <li><a href="#">热带鲜花</a></li>
+                <li><a href="#">送礼首选</a></li>
+                <li><a href="#">节日鲜花</a></li>
+                <li><a href="#">盆栽养殖</a></li>
+                <li><a href="#">清新绿植</a></li>
+                <li><a href="#">美艳鲜花</a></li>
+                <li><a href="#">护理工具</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="mianCont">
+  <div class="positions">
+    当前位置：<a href="index.html">首页</a> &gt; <a href="#" class="posCur">关于我们</a>
+   </div><!--positions/-->
+   <div class="cont">
+    <div class="contLeft" id="contLeft">
+     <h3 class="leftTitle">帮助中心</h3>
+     <dl class="helpNav">
+       <dt class="help4">关于我们</dt>
+       <dd><a href="index.html">官网</a></dd>
+       <dd><a href="help.html">售后服务</a></dd>
+       <dd><a href="about.html" class="helpCur">企业简介</a></dd>
+     </dl><!--helpNav/-->
+    </div><!--contLeft/-->
+    <div class="contRight">
+     <h4 class="gouLiu">企业简介</h4>
+     <div class="helpPar">
+  &nbsp;&nbsp;&nbsp;&nbsp;scnu鲜花有限公司是一家集设计、鲜花售卖、冷库配送于一体的企业，主要生产各式各样的绿植鲜花及护理工具（花束、营养土）等产品。几年来，公司在全体200多位员工共同努力下，本着“以信为本、以诚待人、以新拓展、以质 取胜”的企业宗旨，大胆创新，不断进取，逐渐成为引领为鲜花售卖企业中的领先企业。
+ <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;目前公司拥有花束设计、节日配送、室内盆栽等产品服务，以满足不同客户的需要。本公司本着“诚信为本、质量第一、开创新品、精益求精”的企业精神，致力为用户提供至善至美的服务，欢迎垂询。
+ <br />
+ 公司的承诺：<br/>
+ 　   &nbsp;&nbsp;&nbsp;&nbsp; 对工作：提供高质量的产品，传播优质理念，迅速反应，马上行动。<br/>
+ 　   &nbsp;&nbsp;&nbsp;&nbsp; 对客户：合作双赢，共同发展。<br/>
+ 　   &nbsp;&nbsp;&nbsp;&nbsp; 对员工：教育培训，成就人生。<br/>
+ 　   &nbsp;&nbsp;&nbsp;&nbsp; 对社会：依法经营，保护生态，回馈大众。<br/>
+ <br />
+ &nbsp;&nbsp;&nbsp;&nbsp;绿色健康，是我们最关注的问题！保证产品符合国家标准，符合安全标准。
+     </div><!--helpPar-->
+    </div><!--contRight/-->
+    <div class="clears"></div>
+   
+   
+   <div class="inHelp">
+    <div class="inHLeft">
+     <h4>帮助中心</h4>
+     <ul class="inHeList">
+      <li><a href="help.html">购物指南</a></li>
+      <li><a href="help.html">支付方式</a></li>
+      <li><a href="help.html">售后服务</a></li>
+      <li><a href="about.html">企业简介</a></li>
+      <div class="clears"></div>
+     </ul><!--inHeList/-->
+    </div><!--inHLeft/-->
+    <div class="inHLeft">
+     <h4>会员服务</h4>
+     <ul class="inHeList">
+      <li><a href="regist.html">会员注册</a></li>
+      <li><a href="login.html">会员登录</a></li>
+      <li><a href="mycart.html">购物车</a></li>
+      <li><a href="myorder.html">我的订单</a></li>
+      <div class="clears"></div>
+     </ul><!--inHeList/-->
+    </div><!--inHLeft/-->
+    <div class="inHRight">
+     <h4>全国统一免费服务热线</h4>
+     <div class="telBox">400-0000-0000</div>
+     <div class="weibo">
+     <wb:follow-button uid="2991975565" type="red_1" width="67" height="24" ></wb:follow-button>
+     </div>
+    </div><!--inHRight/-->
+    <div class="clears"></div>
+   </div><!--inHelp/-->
+   <div class="footer">
+    <p>
+    <a href="#">进入官网</a>&nbsp;|&nbsp;
+    <a href="index.html">商城首页</a>&nbsp;|&nbsp;
+    <a href="product.html">促销中心</a>&nbsp;|&nbsp;
+    <a href="order.html">我的订单</a>&nbsp;|&nbsp;
+    <a href="login.html">会员中心</a>&nbsp;|&nbsp;
+    <a href="help.htmll">帮助中心</a>
+    </p>
+    <p>
+     版权所有：scnu鲜花有限公司 版权所有  Copyright 2022-2032   ICP备00000000号
+    </p>
+   </div><!--footer/-->
+
+
+
+</div>
+
+
+
+</body>
+</html>

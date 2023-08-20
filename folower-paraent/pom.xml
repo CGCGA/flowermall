@@ -20,6 +20,8 @@
       <module>flowermall-common-rediscluster</module>
       <module>flowermall-common-user</module>
       <module>flowermall-common-product</module>
+      <module>flowermall-common-cart</module>
+      <module>flowermall-common-order</module>
   </modules>
   
   <parent>
