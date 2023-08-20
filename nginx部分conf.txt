@@ -13,15 +13,7 @@ server {
 			add_header 'Access-Control-Allow-Origin' '*'; 
 		}
 
-                    location /uploadImg {
-                              proxy_pass http://127.0.0.1:9005/zuul-pic/pic/upload;
-			add_header 'Access-Control-Allow-Credentials' 'true';
-			add_header 'Access-Control-Allow-Origin' '*'; 
-                     }
-
-                    location /categorys{
-			proxy_pass http://127.0.0.1:8090/categorys;
-		}
+                    
                     location /cart{
 			proxy_pass http://127.0.0.1:9005/zuul-cart/cart/manage;
 			add_header 'Access-Control-Allow-Credentials' 'true';
@@ -33,11 +25,7 @@ server {
                             add_header 'Access-Control-Allow-Credentials' 'true';
                             add_header 'Access-Control-Allow-Origin' '*'; 
                    }
-                   location /seckills {
-                            proxy_pass http://127.0.0.1:9005/zuul-seckill/seckill/manage;
-                   	        add_header 'Access-Control-Allow-Credentials' 'true';
-                   	        add_header 'Access-Control-Allow-Origin' '*'; 
-                   }
+
 
 
 		location /{
