@@ -67,4 +67,17 @@ public class ProductController {
         }
     }
 
+
+    @RequestMapping("/product/manage/delete")
+    public SysResult productDelete(String productid) {
+        System.out.println("test");
+        try {
+            productService.productDelete(productid);
+            return SysResult.ok();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return SysResult.build(201, e.getMessage(), null);
+        }
+    }
+
 }

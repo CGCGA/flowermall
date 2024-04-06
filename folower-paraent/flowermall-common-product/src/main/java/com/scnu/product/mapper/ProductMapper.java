@@ -20,5 +20,7 @@ public interface ProductMapper {
 
     public Integer queryprodTotal(String prodName);
 
+    public void productDelete(String productid);
+
 
 }

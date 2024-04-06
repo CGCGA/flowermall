@@ -11,6 +11,7 @@ public class Product {
 	private String  productCategory;
 	private String  productImgurl;
 	private String  productDetailimgurl1;
+	private String  productDetailimgurl2;
 
 	public String getProductDetailimgurl1() {
 		return productDetailimgurl1;
@@ -27,8 +28,6 @@ public class Product {
 	public void setProductDetailimgurl2(String productDetailimgurl2) {
 		this.productDetailimgurl2 = productDetailimgurl2;
 	}
-
-	private String  productDetailimgurl2;
 	private Integer productNum;
 	private String  productDescription;
 	//getter setter

@@ -34,13 +34,14 @@ public class ProductService {
     public Product queryById(String productId) {
         String productKey = "product_query_" + productId;
         String lock = "product_update_"+productId+".lock";
+
 //        try {
 //            if(jedis.exists("gender"))
 //            System.out.println(jedis.get("gender"));
 //        }catch (Exception e) {
 //            e.printStackTrace();
 //        }
-//        return null;
+
         try{
 
             if(jedis.exists(lock)) {
@@ -76,8 +77,10 @@ public class ProductService {
         String lock = "product_update_"+product.getProductId()+".lock";
 
         Long leftTime = jedis.ttl("product_query_" + product.getProductId());
-        jedis.setex(lock, Integer.parseInt(leftTime+""), "");
-        jedis.del("product_query_"+product.getProductId());
+        if(leftTime>0) {
+            jedis.setex(lock, Integer.parseInt(leftTime+""), "");
+            jedis.del("product_query_"+product.getProductId());
+        }
         productMapper.productUpdate(product);
 
         jedis.del(lock);
@@ -97,6 +100,17 @@ public class ProductService {
         result.setTotal(total);
         result.setRows(pList);
         return result;
+    }
+
+    public void productDelete(String productid) {
+        String lock = "product_update_"+productid+".lock";
+
+        Long leftTime = jedis.ttl("product_query_" + productid);
+        jedis.setex(lock, Integer.parseInt(leftTime+""), "");
+        jedis.del("product_query_"+productid);
+        productMapper.productDelete(productid);
+
+        jedis.del(lock);
     }
 
 }

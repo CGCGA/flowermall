@@ -25,9 +25,9 @@
 
     <insert id="productSave" parameterType="Product">
         insert into t_product(product_id, product_name,product_category,product_num,
-                              product_imgurl, product_price, product_description)
+                              product_imgurl, product_detailimgurl1, product_detailimgurl2, product_price, product_description)
         values(#{productId}, #{productName}, #{productCategory}, #{productNum},
-               #{productImgurl}, #{productPrice}, #{productDescription})
+               #{productImgurl}, #{productDetailimgurl1}, #{productDetailimgurl2}, #{productPrice}, #{productDescription})
     </insert>
 
     <update id="productUpdate" parameterType="Product">
@@ -37,8 +37,14 @@
         product_num=#{productNum},
         product_price=#{productPrice},
         product_description=#{productDescription},
-        product_imgurl=#{productImgurl}
+        product_imgurl=#{productImgurl},
+        product_detailimgurl1=#{productDetailimgurl1},
+        product_detailimgurl2=#{productDetailimgurl2}
         where product_id=#{productId};
     </update>
+
+    <delete id="productDelete"  parameterType="String">
+        delete from t_product where product_id=#{productid}
+    </delete>
 
 </mapper>

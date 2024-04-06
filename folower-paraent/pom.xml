@@ -22,6 +22,7 @@
       <module>flowermall-common-product</module>
       <module>flowermall-common-cart</module>
       <module>flowermall-common-order</module>
+      <module>flowermall-common-upload</module>
   </modules>
   
   <parent>
